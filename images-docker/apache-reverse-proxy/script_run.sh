@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker run -p 9090:80 res_apache_php
+docker run -p 8080:80 res/apache_rp
 
 # docker run -d --name apache_static res/apache
