@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 1 kill les 3
+# 2 
+# docker rm `docker ps -qa`
 
 # run static apache
 # http://demo.res.ch:8080/
