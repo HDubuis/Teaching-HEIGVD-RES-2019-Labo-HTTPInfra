@@ -20,9 +20,20 @@ docker run -d --name apache_static res_apache_php
 # http://demo.res.ch:8080/api/animals/
 docker run -d --name express_dynamic res_express
 # run proxy reverse
-docker run -d -p 8080:80 --name apache_rp res/apache_rp
+# en static !!!
+# docker run -d -p 8080:80 --name apache_rp res/apache_rp
 
 # docker inspect <ID_docker_ps ou name> | grep "IPA"
-docker inspect apache_static | grep "IPA"
-docker inspect express_dynamic | grep "IPA"
-docker inspect apache_rp | grep "IPA"
+
+# Affiche les IPs des containers 
+echo "IP Static : (port:80)"
+docker inspect apache_static | grep "IPAddress"
+echo "IP Dynamic : (port:3000)"
+docker inspect express_dynamic | grep "IPAddress"
+# Permet de laisser le temps de voir les IPs
+read -p "Press [Enter] key to start backup..."
+# en static !!!
+# docker inspect apache_rp | grep "IPA"
+
+# lance le proxy en dynamic a changer les IPs avec ce qui est afficher par le script
+# docker run -d -e STATIC_APP=172.17.0.5:80 -e DYNAMIC_APP=172.17.0.8:3000 --name apache_rp -p 8080:80 res/apache_rp
