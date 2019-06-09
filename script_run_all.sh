@@ -30,10 +30,14 @@ echo "IP Static : (port:80)"
 docker inspect apache_static | grep "IPAddress"
 echo "IP Dynamic : (port:3000)"
 docker inspect express_dynamic | grep "IPAddress"
-# Permet de laisser le temps de voir les IPs
-read -p "Press [Enter] key to start backup..."
+
+
 # en static !!!
 # docker inspect apache_rp | grep "IPA"
 
+echo $(docker inspect -f "{{ .NetworkSettings.IPAddress }}" apache_static):80
+echo $(docker inspect -f "{{ .NetworkSettings.IPAddress }}" express_dynamic):3000
 # lance le proxy en dynamic a changer les IPs avec ce qui est afficher par le script
-# docker run -d -e STATIC_APP=172.17.0.5:80 -e DYNAMIC_APP=172.17.0.8:3000 --name apache_rp -p 8080:80 res/apache_rp
+docker run -d -e STATIC_APP=$(docker inspect -f "{{ .NetworkSettings.IPAddress }}" apache_static):80 -e DYNAMIC_APP=$(docker inspect -f "{{ .NetworkSettings.IPAddress }}" express_dynamic):3000 --name apache_rp -p 8080:80 res/apache_rp
+# Permet de laisser le temps de voir les IPs
+read -p "Press [Enter] key to start backup..."
