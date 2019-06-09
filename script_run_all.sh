@@ -4,6 +4,7 @@
 docker kill apache_static
 docker kill express_dynamic
 docker kill apache_rp
+docker kill ui
 # 2 kill stopped
 # docker rm `docker ps -qa`
 docker rm $(docker ps -a -q)
