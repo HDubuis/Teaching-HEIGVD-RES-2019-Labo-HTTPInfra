@@ -34,7 +34,7 @@ On peut voir la réponse du javascript dans le naviguateur. Donc un tableau d'an
 
 ## Step 3: Reverse proxy with apache (static configuration)
 
-**aller à la branch : fb-dynamic-reverse**
+**aller à la branch : fb-apache-reverse-proxy**
 
 ### Webcasts
 
@@ -67,6 +67,8 @@ On peut voir la réponse du javascript dans le naviguateur. Donc un tableau d'an
 * You have **documented** your configuration in your report.
 
 ## Step 5: Dynamic reverse proxy configuration
+
+**aller à la branch : fb-dynamic-reverse**
 
 ### Webcasts
 
