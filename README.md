@@ -11,9 +11,8 @@
 4. Faire une resolution DNS sur votre machine (fichier hosts en admin) entre votre IP docker et demo.res.ch
 5. Assurer vous que tous les containers sont kill pour le bon fonctionnement de cette étape.
 5. Aller a la racine, et lancer le script "script_run_all.sh". Il devrait lancer les 3 images faits jusqu'ici et les lier grâce à la configuration.
-5. Dans le naviguateur, aller sur http://demo.res.ch:8080/
-
-Remarque: Il est possible d'accéder seulement au tableau random générer par la partie dynmaic sur http://demo.res.ch:8080/api/animals/
+5. Dans le naviguateur, aller sur http://demo.res.ch:8080/ pour accéder au contenu du docker statique et
+il est possible d'accéder seulement au tableau random générer par la partie dynmaic sur http://demo.res.ch:8080/api/animals/
 
 Dans cette partie, nous avons du configurer le fichier "xxx-reverse-proxy.conf" que nous avons nommé "001-reverse-proxy.conf"
 afin de faire le "mapping" des requêtes sur les dockers et donné un nom au serveur (demo.res.ch).
