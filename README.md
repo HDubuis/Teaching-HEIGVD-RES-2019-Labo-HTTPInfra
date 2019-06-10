@@ -11,11 +11,9 @@ Template : https://startbootstrap.com/themes/
 ### Pour tester l'implémentation
 
 1. cloner le repo
-2. lancer le script qui build l'image (script_build.sh)
+2. lancer le script qui build l'image (.\images-docker\apache-php-image\script_build.sh)
 3. lancer le script qui run un containers avec le script (script_run.sh, la redirection de port peut être modifié)
-4. Dans un naviguateur, tapez : http://localhost:9000/.
-
-Remqure: le script "ReRun.sh" permet de faire une modification et de relancer le containers rapidement. Il lance le containers en arrière plan et avec un nom donnée (-d --name apache_static). Il est configuré afin de fonctionner avec la partie reverse. (**branch min :** fb-apache-reverse-dynamic)
+4. Dans un naviguateur, tapez : 192.168.99.100:9090
 
 
 ### Template utilisé
