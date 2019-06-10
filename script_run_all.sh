@@ -2,7 +2,11 @@
 
 # 1 kill les 3
 docker kill apache_static
+docker kill apache_static2
+docker kill apache_static3
 docker kill express_dynamic
+docker kill express_dynamic3
+docker kill express_dynamic2
 docker kill apache_rp
 docker kill traefik
 #docker kill ui
@@ -24,9 +28,13 @@ echo "Traefik launched"
 # run static apache
 # http://demo.res.ch:8080/
 docker run -d --name apache_static res_apache_php
+docker run -d --name apache_static2 res_apache_php
+docker run -d --name apache_static3 res_apache_php
 # run dynamic express
 # http://demo.res.ch:8080/api/animals/
 docker run -d --name express_dynamic res_express
+docker run -d --name express_dynamic2 res_express
+docker run -d --name express_dynamic3 res_express
 # run proxy reverse
 # en static !!!
 # docker run -d -p 8080:80 --name apache_rp res/apache_rp

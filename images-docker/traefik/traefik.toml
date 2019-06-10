@@ -1,0 +1,18 @@
+debug = true
+
+# Web configuration backend
+[web]
+address = ":9090"
+
+# Docker configuration
+[docker]
+domain = "demo.res.ch"
+watch = true
+
+#Point d'entree
+[entryPoints.http]
+    address = ":80"
+
+#logs
+[traefikLog]
+  filePath = "./traefik.log"
