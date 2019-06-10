@@ -6,6 +6,8 @@ Template : https://startbootstrap.com/themes/
 
 ## 1. Static HTTP server with apache httpd
 
+**branch : master**
+
 ### Pour tester l'implémentation
 
 1. cloner le repo
@@ -13,7 +15,7 @@ Template : https://startbootstrap.com/themes/
 3. lancer le script qui run un containers avec le script (script_run.sh, la redirection de port peut être modifié)
 4. Dans un naviguateur, tapez : http://localhost:9000/.
 
-Remqure: le script "ReRun.sh" permet de faire une modification et de relancer le containers rapidement. Il lance le containers en arrière plan et avec un nom donnée (-d --name apache_static). Il est configuré afin de fonctionner avec la partie reverse. (branch min fb-apache-reverse-dynamic)
+Remqure: le script "ReRun.sh" permet de faire une modification et de relancer le containers rapidement. Il lance le containers en arrière plan et avec un nom donnée (-d --name apache_static). Il est configuré afin de fonctionner avec la partie reverse. (**branch min :** fb-apache-reverse-dynamic)
 
 
 ### Template utilisé
@@ -53,6 +55,8 @@ The third objective is to practice our usage of **Docker**. All the components o
 * You have **documented** your configuration in your report.
 
 ## Step 2: Dynamic HTTP server with express.js
+
+**branch : fb-express-dynamic**
 
 ### Webcasts
 
