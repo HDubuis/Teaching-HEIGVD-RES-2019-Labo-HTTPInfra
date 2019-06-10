@@ -1,80 +1,20 @@
 # Teaching-HEIGVD-RES-2018-Labo-HTTPInfra
 
-### Isaia Spinelli
-images docker : https://hub.docker.com/
-Template : https://startbootstrap.com/themes/
+### Isaia Spinelli et Tommy Geradi
 
-## Objectives
+## Step 4: requêtes AJAX avec JQuery
 
-The first objective of this lab is to get familiar with software tools that will allow us to build a **complete web infrastructure**. By that, we mean that we will build an environment that will allow us to serve **static and dynamic content** to web browsers. To do that, we will see that the **apache httpd server** can act both as a **HTTP server** and as a **reverse proxy**. We will also see that **express.js** is a JavaScript framework that makes it very easy to write dynamic web apps.
+### Pour tester l'implémentation
+1. Cloner le repo
+2. Récupérer et aller sur la branche fb-ajax
+3. Aller dans le repertoire images-docker/apache-reverse-proxy
+4. Faire une resolution DNS sur votre machine (fichier hosts en admin) entre votre IP docker et demo.res.ch
+5. Assurer vous que tous les containers sont kill pour le bon fonctionnement de cette étape.
+5. Aller a la racine, et lancer le script "script_run_all.sh". 
+6. Dans le naviguateur, aller sur http://demo.res.ch:8080/ et il est maintenant possible de voir la page statique
+et une modification toutes les 2 secondes sur le second titre du premier animal du tableau récupèré via une requête
+faite dans le JS de la partie au JS de la partie dynamique.
 
-The second objective is to implement a simple, yet complete, **dynamic web application**. We will create **HTML**, **CSS** and **JavaScript** assets that will be served to the browsers and presented to the users. The JavaScript code executed in the browser will issue asynchronous HTTP requests to our web infrastructure (**AJAX requests**) and fetch content generated dynamically.
-
-The third objective is to practice our usage of **Docker**. All the components of the web infrastructure will be packaged in custom Docker images (we will create at least 3 different images).
-
-## General instructions
-
-* This is a **BIG** lab and you will need a lot of time to complete it. This is the last lab of the semester (but it will keep us busy for a few weeks!).
-* We have prepared webcasts for a big portion of the lab (**what can get you the "base" grade of 4.5**).
-* To get **additional points**, you will need to do research in the documentation by yourself (we are here to help, but we will not give you step-by-step instructions!). To get the extra points, you will also need to be creative (do not expect complete guidelines).
-* The lab can be done in **groups of 2 students**. You will learn very important skills and tools, which you will need to next year's courses. You cannot afford to skip this content if you want to survive next year.
-* Read carefully all the **acceptance criteria**.
-* We will request demos as needed. When you do your **demo**, be prepared to that you can go through the procedure quickly (there are a lot of solutions to evaluate!)
-* **You have to write a report. Please do that directly in the repo, in one or more markdown files. Start in the README.md file at the root of your directory.**
-* The report must contain the procedure that you have followed to prove that your configuration is correct (what you would do if you were doing a demo)
-
-
-## Step 1: Static HTTP server with apache httpd
-
-### Webcasts
-
-* [Labo HTTP (1): Serveur apache httpd "dockerisé" servant du contenu statique](https://www.youtube.com/watch?v=XFO4OmcfI3U)
-
-### Acceptance criteria
-
-* You have a GitHub repo with everything needed to build the Docker image.
-* You can do a demo, where you build the image, run a container and access content from a browser.
-* You have used a nice looking web template, different from the one shown in the webcast.
-* You are able to explain what you do in the Dockerfile.
-* You are able to show where the apache config files are located (in a running container).
-* You have **documented** your configuration in your report.
-
-## Step 2: Dynamic HTTP server with express.js
-
-### Webcasts
-
-* [Labo HTTP (2a): Application node "dockerisée"](https://www.youtube.com/watch?v=fSIrZ0Mmpis)
-* [Labo HTTP (2b): Application express "dockerisée"](https://www.youtube.com/watch?v=o4qHbf_vMu0)
-
-### Acceptance criteria
-
-* You have a GitHub repo with everything needed to build the Docker image.
-* You can do a demo, where you build the image, run a container and access content from a browser.
-* You generate dynamic, random content and return a JSON payload to the client.
-* You cannot return the same content as the webcast (you cannot return a list of people).
-* You don't have to use express.js; if you want, you can use another JavaScript web framework or event another language.
-* You have **documented** your configuration in your report.
-
-
-## Step 3: Reverse proxy with apache (static configuration)
-
-### Webcasts
-
-* [Labo HTTP (3a): reverse proxy apache httpd dans Docker](https://www.youtube.com/watch?v=WHFlWdcvZtk)
-* [Labo HTTP (3b): reverse proxy apache httpd dans Docker](https://www.youtube.com/watch?v=fkPwHyQUiVs)
-* [Labo HTTP (3c): reverse proxy apache httpd dans Docker](https://www.youtube.com/watch?v=UmiYS_ObJxY)
-
-
-### Acceptance criteria
-
-* You have a GitHub repo with everything needed to build the Docker image for the container.
-* You can do a demo, where you start from an "empty" Docker environment (no container running) and where you start 3 containers: static server, dynamic server and reverse proxy; in the demo, you prove that the routing is done correctly by the reverse proxy.
-* You can explain and prove that the static and dynamic servers cannot be reached directly (reverse proxy is a single entry point in the infra). 
-* You are able to explain why the static configuration is fragile and needs to be improved.
-* You have **documented** your configuration in your report.
-
-
-## Step 4: AJAX requests with JQuery
 
 ### Webcasts
 
@@ -89,6 +29,8 @@ The third objective is to practice our usage of **Docker**. All the components o
 * You have **documented** your configuration in your report.
 
 ## Step 5: Dynamic reverse proxy configuration
+
+**branche : fb-dynamic-reverse**
 
 ### Webcasts
 
