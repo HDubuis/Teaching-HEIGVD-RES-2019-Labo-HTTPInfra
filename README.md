@@ -14,11 +14,21 @@ l'objectif est d'avoir une interface utilisateur afin de manager docker.
 ### Pour tester l'implémentation
 
 1. Cloner le repo 
+
 2. Faire une résolution DNS sur votre machine (fichier hosts en admin) entre votre docker IP et demo.res.ch
+
 3. Allez à la racine et lancez le script "script_run_all.sh".
-4. Dans le naviguateur, aller sur http://demo.res.ch:9000/
-5. Crée un compte
-6. Selectionnez local et connect
+
+4. Lancez les deux commandes suivantes dans le terminal docker :
+
+   docker volume create portainer_data
+   docker run -d -p 9000:9000 --name ui -v "/var/run/docker.sock:/var/run/docker.sock" -v portainer_data:/data portainer/portainer
+
+5. Dans le naviguateur, aller sur http://demo.res.ch:9000/
+
+6. Crééz un compte
+
+7. Sélectionnez local et connect
 
 
 ## Additional steps to get extra points on top of the "base" grade
@@ -46,6 +56,7 @@ l'objectif est d'avoir une interface utilisateur afin de manager docker.
 
 ### Management UI (0.5 pt)
 
-* You develop a web app (e.g. with express.js) that administrators can use to monitor and update your web infrastructure.
-* You find a way to control your Docker environment (list containers, start/stop containers, etc.) from the web app. For instance, you use the Dockerode npm module (or another Docker client library, in any of the supported languages).
-* You have documented your configuration and your validation procedure in your report.
+* Afin d'avoir l'UI pour manager docker il suffit de lancer les 2 commandes qui suivent (attention, elles doivent être lancées avec le terminal docker!) :
+* docker volume create portainer_data
+  docker run -d -p 9000:9000 --name ui -v "/var/run/docker.sock:/var/run/docker.sock" -v portainer_data:/data portainer/portainer
+* Vous pourrez ensuite accéder à l'UI à l'adresse "demo.res.ch:9000" (à condition que le reste)
