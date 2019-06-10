@@ -1,45 +1,21 @@
 # Teaching-HEIGVD-RES-2018-Labo-HTTPInfra
 
-### Isaia Spinelli
-images docker : https://hub.docker.com/
-Template : https://startbootstrap.com/themes/
+### Isaia Spinelli et Tommy Gerardi
 
-## Objectives
+## 2. Dynamic HTTP server with express.js
 
-The first objective of this lab is to get familiar with software tools that will allow us to build a **complete web infrastructure**. By that, we mean that we will build an environment that will allow us to serve **static and dynamic content** to web browsers. To do that, we will see that the **apache httpd server** can act both as a **HTTP server** and as a **reverse proxy**. We will also see that **express.js** is a JavaScript framework that makes it very easy to write dynamic web apps.
+**branch : fb-express-dynamic**
 
-The second objective is to implement a simple, yet complete, **dynamic web application**. We will create **HTML**, **CSS** and **JavaScript** assets that will be served to the browsers and presented to the users. The JavaScript code executed in the browser will issue asynchronous HTTP requests to our web infrastructure (**AJAX requests**) and fetch content generated dynamically.
+### Pour tester l'implémentation
 
-The third objective is to practice our usage of **Docker**. All the components of the web infrastructure will be packaged in custom Docker images (we will create at least 3 different images).
+1. Cloner le repo
+2. Récupérer et aller sur la branche **fb-express-dynamic**
+3. Aller dans le repertoire express-image
+4. lancer le script qui build l'image (script_build.sh)
+5. lancer le script qui run un containers avec le script (script_run.sh, la redirection de port peut être modifié)
+6. Dans un naviguateur, tapez : http://localhost:9090/.
 
-## General instructions
-
-* This is a **BIG** lab and you will need a lot of time to complete it. This is the last lab of the semester (but it will keep us busy for a few weeks!).
-* We have prepared webcasts for a big portion of the lab (**what can get you the "base" grade of 4.5**).
-* To get **additional points**, you will need to do research in the documentation by yourself (we are here to help, but we will not give you step-by-step instructions!). To get the extra points, you will also need to be creative (do not expect complete guidelines).
-* The lab can be done in **groups of 2 students**. You will learn very important skills and tools, which you will need to next year's courses. You cannot afford to skip this content if you want to survive next year.
-* Read carefully all the **acceptance criteria**.
-* We will request demos as needed. When you do your **demo**, be prepared to that you can go through the procedure quickly (there are a lot of solutions to evaluate!)
-* **You have to write a report. Please do that directly in the repo, in one or more markdown files. Start in the README.md file at the root of your directory.**
-* The report must contain the procedure that you have followed to prove that your configuration is correct (what you would do if you were doing a demo)
-
-
-## Step 1: Static HTTP server with apache httpd
-
-### Webcasts
-
-* [Labo HTTP (1): Serveur apache httpd "dockerisé" servant du contenu statique](https://www.youtube.com/watch?v=XFO4OmcfI3U)
-
-### Acceptance criteria
-
-* You have a GitHub repo with everything needed to build the Docker image.
-* You can do a demo, where you build the image, run a container and access content from a browser.
-* You have used a nice looking web template, different from the one shown in the webcast.
-* You are able to explain what you do in the Dockerfile.
-* You are able to show where the apache config files are located (in a running container).
-* You have **documented** your configuration in your report.
-
-## Step 2: Dynamic HTTP server with express.js
+On peut voir la réponse du javascript dans le naviguateur. Donc un tableau d'animaux random.
 
 ### Webcasts
 
@@ -57,6 +33,8 @@ The third objective is to practice our usage of **Docker**. All the components o
 
 
 ## Step 3: Reverse proxy with apache (static configuration)
+
+**aller à la branch : fb-dynamic-reverse**
 
 ### Webcasts
 
