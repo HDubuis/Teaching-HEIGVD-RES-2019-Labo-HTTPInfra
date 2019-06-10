@@ -1,8 +1,24 @@
 # Teaching-HEIGVD-RES-2018-Labo-HTTPInfra
 
-### Isaia Spinelli
+### Isaia Spinelli et Tommy Gerardi
 images docker : https://hub.docker.com/
 Template : https://startbootstrap.com/themes/
+
+## 1. Static HTTP server with apache httpd
+
+### Pour tester l'implémentation
+
+1. cloner le repo
+2. lancer le script qui build l'image (script_build.sh)
+3. lancer le script qui run un containers avec le script (script_run.sh, la redirection de port peut être modifié)
+4. Dans un naviguateur, tapez : http://localhost:9000/.
+
+Remqure: le script "ReRun.sh" permet de faire une modification et de relancer le containers rapidement. Il lance le containers en arrière plan et avec un nom donnée (-d --name apache_static). Il est configuré afin de fonctionner avec la partie reverse. (branch min fb-apache-reverse-dynamic)
+
+
+### Template utilisé
+
+https://startbootstrap.com/templates/blog-home/
 
 ## Objectives
 
@@ -22,9 +38,6 @@ The third objective is to practice our usage of **Docker**. All the components o
 * We will request demos as needed. When you do your **demo**, be prepared to that you can go through the procedure quickly (there are a lot of solutions to evaluate!)
 * **You have to write a report. Please do that directly in the repo, in one or more markdown files. Start in the README.md file at the root of your directory.**
 * The report must contain the procedure that you have followed to prove that your configuration is correct (what you would do if you were doing a demo)
-
-
-## Step 1: Static HTTP server with apache httpd
 
 ### Webcasts
 
